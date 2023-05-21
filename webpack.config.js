@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // установил и подключил очистку папки дист
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,13 +7,18 @@ module.exports = (env, options) => {
   const isProduction = options.mode === 'production';
 
   const config = {
-    mode: isProduction ? 'production' : 'development', // режим запуска
-    devtool: isProduction ? false : 'source-map', // дебаг
-    watch: !isProduction, // онлайн ватч изменений
-    entry: ['./src/index.js', './src/style/style.scss'], // входной файл
+    mode: isProduction ? 'production' : 'development',
+    devtool: isProduction ? false : 'source-map',
+    watch: !isProduction,
+    entry: ['./src/index.js', './src/style/style.scss'],
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
+    },
     output: {
       filename: '[name].[contenthash].js',
-      path: path.resolve(__dirname, 'dist'), // делает абсолютный путь
+      path: path.resolve(__dirname, 'dist'),
       assetModuleFilename: 'assets/image/[name].[ext]',
     },
     devServer: {
@@ -22,9 +27,8 @@ module.exports = (env, options) => {
     module: {
       rules: [
         {
-          // устновил бабел из вкладки лоадер документации вебпака (для поддержки старых браузеров)
-          test: /\.js$/, // формат файлов js
-          exclude: /node_modules/, // исключаем из сборки
+          test: /\.js$/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -55,13 +59,13 @@ module.exports = (env, options) => {
     },
 
     plugins: [
-      new CleanWebpackPlugin(), // clean dist folder
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: '/src/index.html',
         minify: {
           collapseWhitespace: isProduction,
         },
-      }), // удаляем style и script из html
+      }),
       new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
       }),
