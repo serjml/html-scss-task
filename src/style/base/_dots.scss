@@ -1,0 +1,26 @@
+.dots {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include media-laptop {
+    &_extra {
+      display: none;
+    }
+  }
+  @include media-tablet {
+    &_tablet {
+      display: none;
+    }
+    &_extra {
+      display: block;
+    }
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c4c4c4;
+}

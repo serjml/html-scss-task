@@ -1,0 +1,42 @@
+.icon {
+  width: 100px;
+  height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: $color-primary;
+  border: 5px solid $color-border-ico;
+  box-sizing: border-box;
+
+  @include media-mobile {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.ico {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+
+  @include media-mobile {
+    transform: scale(0.8, 0.8);
+  }
+
+  &_search {
+    background-image: url('/src/assets/image/icons/search.svg');
+  }
+  &_percent {
+    background-image: url('/src/assets/image/icons/percent.svg');
+  }
+  &_document {
+    background-image: url('/src/assets/image/icons/document.svg');
+  }
+  &_letter {
+    background-image: url('/src/assets/image/icons/letter.svg');
+  }
+  &_bill {
+    background-image: url('/src/assets/image/icons/bill.svg');
+  }
+}

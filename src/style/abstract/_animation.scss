@@ -1,0 +1,19 @@
+@keyframes open-select {
+  from {
+    height: 0;
+  }
+  to {
+    height: 180px;
+    display: block;
+  }
+}
+
+@keyframes close-select {
+  from {
+    height: 180px;
+  }
+  to {
+    height: 0;
+    display: none;
+  }
+}

@@ -1,0 +1,63 @@
+html {
+  font-size: 10px;
+}
+
+.body {
+  margin: 0;
+  @extend %font-primary;
+  @include font($size: 1.6rem, $height: 1.9rem, $weight: 400);
+
+  &_scroll_none {
+    overflow: hidden;
+  }
+}
+
+.title {
+  margin: 0;
+}
+
+.h1 {
+  @extend %font-secondary;
+  @include font($size: 2.8rem, $height: 3.4rem, $color: $color-light);
+  @include media-tablet {
+    font-size: 2.4rem;
+  }
+  @include media-mobile {
+    font-size: 2rem;
+  }
+}
+
+.h2 {
+  @include font($size: 4.8rem, $height: 5.8rem, $weight: 700);
+  @include media-tablet {
+    @include font($size: 3rem, $height: 4.4rem);
+  }
+  @include media-mobile {
+    @include font($size: 2.2rem, $height: 2.8rem);
+  }
+}
+
+.h3 {
+  @include font($size: 3.6rem, $height: 4.3rem, $color: $color-light);
+
+  @include media-tablet {
+    @include font($size: 3rem, $height: 3.8rem, $color: $color-light);
+  }
+
+  @include media-mobile {
+    @include font($size: 2rem, $height: 2.4rem, $color: $color-light);
+    margin-bottom: 10px;
+  }
+}
+
+.text_colored {
+  color: $color-primary;
+}
+
+.content {
+  @include columns($gap: 8rem, $direction: column);
+
+  @include media-tablet {
+    @include columns($gap: 4rem, $direction: column);
+  }
+}

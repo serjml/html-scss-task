@@ -1,0 +1,70 @@
+.promo {
+  padding: 203px 0;
+  background: $color-light url('/src/assets/image/promo.jpg') no-repeat center / cover;
+
+  @include media-tablet {
+    padding: 150px 0 80px;
+  }
+
+  @include media-mobile {
+    padding: 120px 0 60px;
+  }
+}
+
+.promo__content {
+  max-width: 780px;
+
+  @include media-tablet {
+    max-width: 500px;
+  }
+  @include media-mobile {
+    max-width: 100%;
+    align-items: center;
+  }
+}
+
+.promo__subtitle {
+  margin: 0 0 1rem;
+  @include font($size: 2rem, $height: 2.4rem, $weight: 700, $case: none);
+
+  @include media-tablet {
+    @include font($size: 1.8rem, $height: 2rem, $weight: 700, $case: none);
+  }
+}
+
+.promo__description {
+  margin: 0;
+  padding: 0;
+  @include columns($gap: 5px, $direction: column);
+}
+
+.promo__list-item {
+  position: relative;
+  padding-left: 25px;
+  list-style-type: none;
+
+  @include font($size: 2rem, $height: 2.4rem, $weight: 400, $case: none);
+
+  @include media-tablet {
+    @include font($size: 1.8rem, $height: 2rem, $weight: 400, $case: none);
+  }
+
+  &::before {
+    content: '';
+    width: 5px;
+    height: 1.5px;
+    background-color: $color-dark;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+  }
+}
+
+.promo__buttons {
+  display: flex;
+  gap: 10px;
+
+  @include media-mobile {
+    flex-direction: column-reverse;
+  }
+}

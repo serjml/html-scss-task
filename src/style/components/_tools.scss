@@ -1,0 +1,41 @@
+.tool {
+  position: relative;
+  @include basis($column: 5, $gap: 30px);
+
+  @include media-mobile {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+}
+
+.tool__dots {
+  padding: 0;
+  position: absolute;
+  width: 52%;
+  @include font($size: 0, $height: 0);
+  transform: translate(156%, 47px);
+}
+
+.tool__icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+
+  @include media-mobile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+.tool__title {
+  margin: 0;
+  width: 188px;
+  text-align: center;
+  @include font($size: 1.6rem, $height: 1.9rem, $weight: 400, $color: $color-light, $case: none);
+
+  @include media-mobile {
+    text-align: left;
+  }
+}

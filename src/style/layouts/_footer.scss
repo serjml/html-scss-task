@@ -1,0 +1,102 @@
+.footer {
+  background-color: $color-select-button;
+}
+
+.footer__wrapper {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 36px;
+
+  @include media-laptop {
+    gap: 20px;
+  }
+  @include media-tablet {
+    padding: 30px 10px 40px;
+    flex-direction: column;
+  }
+
+  @include media-mobile {
+    padding: 20px 10px;
+  }
+}
+
+.footer__info {
+  @include font($size: 1.3rem, $height: 1.6rem, $color: $color-light, $weight: 400, $case: none);
+  @include media-mobile {
+    text-align: center;
+  }
+}
+
+.footer__item {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding-left: 30px;
+}
+
+.footer__payments {
+  display: flex;
+  padding: 0 1rem;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  border-right: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  @include font($size: 1.3rem, $height: 1.6rem, $color: $color-payment, $weight: 400, $case: none);
+
+  @include media-laptop {
+    gap: 10px;
+    text-align: center;
+  }
+
+  @include media-tablet {
+    border: none;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    padding: 20px 10px;
+  }
+
+  @include media-mobile {
+    padding: 20px 10px;
+  }
+}
+
+.payment_qiwi {
+  background: url('/src/assets/image/icons/qiwi.svg') no-repeat left / contain;
+}
+
+.payment_yandex {
+  background: url('/src/assets/image/icons/yandex.svg') no-repeat left / contain;
+}
+
+.payment_web {
+  background: url('/src/assets/image/icons/webmoney.svg') no-repeat left / contain;
+}
+
+.footer__contacts {
+  display: flex;
+  gap: 38px;
+
+  @include media-laptop {
+    gap: 15px;
+  }
+}
+
+.contact {
+  text-decoration: none;
+  @include font($size: 1.3rem, $height: 1.6rem, $color: $color-light, $weight: 400, $case: none);
+  @extend %transition;
+
+  &:hover {
+    color: $color-hover;
+  }
+
+  &_mail {
+    background: url('/src/assets/image/icons/mail.svg') no-repeat left / contain;
+  }
+
+  &_vk {
+    background: url('/src/assets/image/icons/vk.svg') no-repeat left / contain;
+  }
+}
